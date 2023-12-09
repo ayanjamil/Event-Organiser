@@ -13,6 +13,138 @@
             android:layout_margin="10dp"
             android:layout_width="70dp"
             android:layout_height="70dp"/>
+        <TextView
+            android:id="@+id/upcomming_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upcoming Events"
+                android:textSize="25dp"
+            android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+        <ScrollView
+            app:layout_constraintTop_toTopOf="@id/upcomming_event"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_panel"
+
+
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+
+            android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp"
+                    android:padding="20dp"
+                >
+
+                <!-- Add your views here -->
+                <ImageButton
+                    android:id="@+id/image1"
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/event_image" />
+                        <TextView
+                            android:id="@+id/headding_event01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="Event 1"
+                                android:textSize="25dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                                android:text="Location, time and description "/>
+                        <ImageButton
+                            android:layout_margin="10dp"
+                            android:id="@+id/image2"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/event_image" />
+                        <TextView
+                            android:id="@+id/headding_event02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Event 2"
+                            android:textSize="25dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Location, time and description "/>
+                        <ImageButton
+                            android:id="@+id/image3"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/event_image" />
+                        <TextView
+                            android:id="@+id/headding_event03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Event 3"
+                            android:textSize="25dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Location, time and description "/>
+                        <ImageButton
+                            android:id="@+id/image4"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/event_image" />
+                        <TextView
+                            android:id="@+id/headding_event04"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Event 4"
+                            android:textSize="25dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Location, time and description "/>
+                        <ImageButton
+                            android:id="@+id/image5"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/event_image" />
+                        <TextView
+                            android:id="@+id/headding_event05"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Event 5"
+                            android:textSize="25dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Location, time and description "/>
+
+
+
+
+                <!-- Add more views if needed -->
+        </LinearLayout>
+
+</ScrollView>
+
+
+
+
+
+
+
 
         <LinearLayout
             android:background="@color/bottom_bar"
