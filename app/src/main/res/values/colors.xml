@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bottom_bar">#612C74</color>
 
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorLightGray">#EBEBEB</color>
+
 </resources>
