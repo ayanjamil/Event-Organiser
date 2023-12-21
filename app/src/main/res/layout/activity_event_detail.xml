@@ -17,7 +17,7 @@
     <TextView
         android:id="@+id/tv_eventname"
         android:text="Event name"
-        android:textSize="40dp"
+        android:textSize="41dp"
         android:textStyle="bold"
         android:padding="5dp"
         android:gravity="center"
