@@ -7,20 +7,27 @@ import android.os.Parcelable
 // haveing a ImageView and two TextViews
 
 data class event_model
-    (var image:Int,
-     var tv_heading:String,
-     var tv_descrpition:String): Parcelable {
+    (var eventImage:Int,
+     var eventName:String,
+     var eventLocation:String,
+     var eventTime:String,
+     var eventDescription:String
+            ):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
+        parcel.readString()!!,
+        parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(image)
-        parcel.writeString(tv_heading)
-        parcel.writeString(tv_descrpition)
+        parcel.writeInt(eventImage)
+        parcel.writeString(eventName)
+        parcel.writeString(eventLocation)
+        parcel.writeString(eventTime)
+        parcel.writeString(eventDescription)
     }
 
     override fun describeContents(): Int {

@@ -21,9 +21,9 @@ class EventAdapter(private val eventList: ArrayList<event_model>) :
     }
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         val event = eventList[position]
-        holder.heading.text = event.tv_heading
-        holder.description.text = event.tv_descrpition
-        holder.image.setImageResource(event.image)
+        holder.heading.text = event.eventName
+        holder.loctimeDetails.text = event.eventTime+event.eventLocation
+        holder.image.setImageResource(event.eventImage)
         //assigning the positions of each event in the recyclerview
         // the recycler views text = event which is a variale decleared locally which holds
         // the values of a instance of eventList which is passed in the recyclerview
@@ -39,7 +39,9 @@ class EventAdapter(private val eventList: ArrayList<event_model>) :
     class EventViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView) {
         val image:ImageView = itemView.findViewById(R.id.image)
         val heading:TextView =itemView.findViewById(R.id.headding_event01)
-        val description:TextView =itemView.findViewById(R.id.tv_loctimedetails)
+        val loctimeDetails:TextView =itemView.findViewById(R.id.tv_loctimedetails)
+        // loctimeDetails is for the recylerview use only
+
         //importing all the ids of the itemrow XML as that XML is an example of how each element
         // in the recyclerview should be
 
