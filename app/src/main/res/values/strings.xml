@@ -9,4 +9,10 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="randomDescription">"
+        Description Description Description Description Description Description " +
+        "Description Description Description Description Description Description Description Description Description " +
+        "Description Description Description Description Description Description Description Description Description Description " +
+        "Description Description Description Description Description Description Description Description Description Description "</string>
+    <string name="randomDescriptions">Description Description Description Description Description Description Description Description Description Description Description DescriptionDescription Description Description Description Description DescriptionDescription Description Description Description Description DescriptionDescription Description Description Description Description DescriptionDescription Description Description Description Description DescriptionDescription Description Description Description Description DescriptionDescription Description Description Description Description DescriptionDescription Description Description Description Description DescriptionDescription Description Description Description Description DescriptionDescription Description Description Description Description DescriptionDescription Description Description Description Description Description\n</string>
 </resources>
