@@ -8,14 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 
 class EventAdapter(private val eventList: ArrayList<event_model>) :
     RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
-
+    //basic recylerview format
     var onItemClick:((event_model)->Unit)?=null
     // defining lamda function of clickability of items inside recyclerview
-
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.event_layout,parent,false)
+        val view = LayoutInflater.from(parent.context).
+        inflate(R.layout.event_layout,parent,false)
         return EventViewHolder(view)
         // nothing much to do here it is what it is this is how you do it without viewbinding
     }
@@ -29,8 +27,8 @@ class EventAdapter(private val eventList: ArrayList<event_model>) :
         // the values of a instance of eventList which is passed in the recyclerview
 
         holder.itemView.setOnClickListener {
-            onItemClick?.invoke(event)
-
+            onItemClick?.invoke(event)// the lambda function we defined whose
+            // return type is unit or void
         }
     }
     override fun getItemCount(): Int {
@@ -41,13 +39,8 @@ class EventAdapter(private val eventList: ArrayList<event_model>) :
         val heading:TextView =itemView.findViewById(R.id.headding_event01)
         val loctimeDetails:TextView =itemView.findViewById(R.id.tv_loctimedetails)
         // loctimeDetails is for the recylerview use only
-
         //importing all the ids of the itemrow XML as that XML is an example of how each element
         // in the recyclerview should be
-
-
-
-
     }
     //can also use binding in the above block
 }

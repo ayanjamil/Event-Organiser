@@ -13,9 +13,10 @@ data class event_model
      var eventTime:String,
      var eventDescription:String
             ):Parcelable {
+    // below code is just to make this class parclable and pars in putExtra function
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
-        parcel.readString()!!,
+        parcel.readString()!!, //made nullable
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!

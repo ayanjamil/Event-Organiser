@@ -14,11 +14,8 @@ import com.example.edc_test01.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var eventsList:ArrayList<event_model>
-
-//
-    private lateinit var eventAdapter:EventAdapter //tag//
-
-
+    private lateinit var eventAdapter:EventAdapter
+    //intitializing variables to be used
     private var binding: ActivityMainBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -207,7 +204,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        // Adapter class is initialized and list is passed in the param.
+        // Adapter class is initialized above and list is passed in the param.
         eventAdapter = EventAdapter(eventsList)
         // adapter instance is set to the recyclerview to inflate the items.
         binding?.rvEventList?.adapter = eventAdapter

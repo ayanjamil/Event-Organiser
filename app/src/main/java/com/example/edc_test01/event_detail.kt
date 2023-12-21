@@ -12,6 +12,7 @@ class event_detail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_detail)
         val event = intent.getParcelableExtra("event",event_model::class.java)
+        //reciving whateven extra was passed from main
         if (event!=null){
             val imageView :ImageView=findViewById(R.id.event_imagview)
             val eventName :TextView=findViewById(R.id.tv_eventname)
