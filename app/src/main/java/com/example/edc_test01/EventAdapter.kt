@@ -8,6 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 
 class EventAdapter(private val eventList: ArrayList<event_model>) :
     RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+
+    var onItemClick:((event_model)->Unit)?=null
+    // defining lamda function of clickability of items inside recyclerview
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.event_layout,parent,false)
         return EventViewHolder(view)
@@ -21,6 +27,11 @@ class EventAdapter(private val eventList: ArrayList<event_model>) :
         //assigning the positions of each event in the recyclerview
         // the recycler views text = event which is a variale decleared locally which holds
         // the values of a instance of eventList which is passed in the recyclerview
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(event)
+
+        }
     }
     override fun getItemCount(): Int {
         return eventList.size
@@ -31,6 +42,9 @@ class EventAdapter(private val eventList: ArrayList<event_model>) :
         val description:TextView =itemView.findViewById(R.id.tv_loctimedetails)
         //importing all the ids of the itemrow XML as that XML is an example of how each element
         // in the recyclerview should be
+
+
+
 
     }
     //can also use binding in the above block

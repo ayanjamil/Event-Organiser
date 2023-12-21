@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    tools:context=".events">
+    android:background="@drawable/gradient">
     <ImageView
         android:id="@+id/event_imagview"
         android:layout_width="match_parent"
@@ -25,7 +24,7 @@
         app:layout_constraintTop_toBottomOf="@id/event_imagview"
 
 
-         android:layout_height="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"/>
     <TextView
         android:id="@+id/tv_location"

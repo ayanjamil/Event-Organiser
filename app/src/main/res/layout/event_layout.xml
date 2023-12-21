@@ -19,11 +19,13 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:text="Event 1"
+        android:textColor="@color/white"
         android:textSize="25sp"/>
     <TextView
         android:id="@+id/tv_loctimedetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:textColor="@color/white"
         android:text="Location and Time "/>
 </LinearLayout>
