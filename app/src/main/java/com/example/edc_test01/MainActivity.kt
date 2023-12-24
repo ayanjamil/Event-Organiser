@@ -26,180 +26,31 @@ class MainActivity : AppCompatActivity() {
         eventsList.add(event_model(
             com.example.edc_test01.R.drawable.image01,
             "makers and bakers",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
+            "Mesra" ,"00:13:12:02:24", getString(R.string.randomDescriptions)
             ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image02,
-            "Baby cries Baby Dies",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image03,
-            "One or Nun",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image04,
-            "Try harder or go Bananas",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image05,
-            "Lick or stick it",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-       //repeating
 
         eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image01,
-            "makers and bakers",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
             com.example.edc_test01.R.drawable.image02,
             "Baby cries Baby Dies",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
+            "Mesra" ,"00:13:12:02:24", getString(R.string.randomDescriptions)
         ))
         eventsList.add(event_model(
             com.example.edc_test01.R.drawable.image03,
             "One or Nun",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
+            "Mesra" ,"00:13:12:02:24", getString(R.string.randomDescriptions)
         ))
         eventsList.add(event_model(
             com.example.edc_test01.R.drawable.image04,
             "Try harder or go Bananas",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
+            "Mesra" ,"00:13:12:02:24", getString(R.string.randomDescriptions)
         ))
         eventsList.add(event_model(
             com.example.edc_test01.R.drawable.image05,
             "Lick or stick it",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
+            "Mesra" ,"00:13:12:02:24", getString(R.string.randomDescriptions)
         ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image01,
-            "makers and bakers",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image02,
-            "Baby cries Baby Dies",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image03,
-            "One or Nun",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image04,
-            "Try harder or go Bananas",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image05,
-            "Lick or stick it",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image01,
-            "makers and bakers",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image02,
-            "Baby cries Baby Dies",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image03,
-            "One or Nun",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image04,
-            "Try harder or go Bananas",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image05,
-            "Lick or stick it",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image01,
-            "makers and bakers",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image02,
-            "Baby cries Baby Dies",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image03,
-            "One or Nun",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image04,
-            "Try harder or go Bananas",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image05,
-            "Lick or stick it",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image01,
-            "makers and bakers",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image02,
-            "Baby cries Baby Dies",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image03,
-            "One or Nun",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image04,
-            "Try harder or go Bananas",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image05,
-            "Lick or stick it",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image01,
-            "makers and bakers",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image02,
-            "Baby cries Baby Dies",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image03,
-            "One or Nun",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image04,
-            "Try harder or go Bananas",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
-        eventsList.add(event_model(
-            com.example.edc_test01.R.drawable.image05,
-            "Lick or stick it",
-            "Mesra" ,"1:00 P.M", getString(R.string.randomDescriptions)
-        ))
+
+       //repeating
         //can also make a constance for making this block cleaner
 
 
