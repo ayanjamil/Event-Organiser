@@ -1,4 +1,6 @@
 package com.example.edc_test01
+import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,6 +22,7 @@ import java.util.concurrent.TimeUnit
 class event_detail : AppCompatActivity(),TextToSpeech.OnInitListener {
     private var restTimer: CountDownTimer? = null
     private var tts: TextToSpeech? = null // Variable for TextToSpeech
+    private var player: MediaPlayer? = null
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +55,9 @@ class event_detail : AppCompatActivity(),TextToSpeech.OnInitListener {
         }
         else
             Log.d("event_details issue","when the if block is not executed in event_datials secton")
+
+        // calling the function for sound effects in the beginning
+        sounfPlay()
     }
     private fun setDate(eventTime:String){
         val displaytimer = findViewById<TextView>(R.id.tv_countdown)
@@ -132,5 +138,17 @@ override fun onInit(status: Int) {
             .show()
         Log.d("tts_init","Text to speach block initiated $text")
         tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, "")
+    }
+    //making the function for enternce sound in the eventdetails part
+    private fun sounfPlay(){
+        try {
+            val soundURI =
+                Uri.parse("android.resource://com.example.edc_test01/" + R.raw.press_start)
+            player = MediaPlayer.create(applicationContext, soundURI)
+            player?.isLooping = false // Sets the player to be looping or non-looping.
+            player?.start() // Starts Playback.
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 }
