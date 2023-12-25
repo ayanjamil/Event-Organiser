@@ -7,5 +7,5 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorLightGray">#EBEBEB</color>
     <color name="colorAccent">#008F24</color>
-
+    <color name="colorPrimary">#B2212121</color>
 </resources>

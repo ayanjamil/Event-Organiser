@@ -1,4 +1,5 @@
 package com.example.edc_test01
+import android.app.Dialog
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Build
@@ -12,6 +13,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.Toolbar
+import com.example.edc_test01.databinding.DialogCustomBackConfirmationBinding
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -36,6 +39,7 @@ class event_detail : AppCompatActivity(),TextToSpeech.OnInitListener {
             val location:TextView=findViewById(R.id.tv_location)
             val time:TextView=findViewById(R.id.tv_time)
             val registerBtn = findViewById<Button>(R.id.btn_register)
+//            val actionBar: Toolbar = findViewById(R.id.toolbarEvent)
             //above part is linking event_details kind of imporitng its ids
             imageView.setImageResource(event.eventImage)
             eventName.text=event.eventName
@@ -52,12 +56,14 @@ class event_detail : AppCompatActivity(),TextToSpeech.OnInitListener {
                 val event_name = event.eventName
                 speakOut(event_name) // it can only hold strings
                 Log.d("event_name issue","the event name is $event_name")
+
+            // calling the function for sound effects in the beginning
+            sounfPlay()
+            // setting up action bar with back button support
+            activitybarSetup()
         }
         else
             Log.d("event_details issue","when the if block is not executed in event_datials secton")
-
-        // calling the function for sound effects in the beginning
-        sounfPlay()
     }
     private fun setDate(eventTime:String){
         val displaytimer = findViewById<TextView>(R.id.tv_countdown)
@@ -151,4 +157,31 @@ override fun onInit(status: Int) {
             e.printStackTrace()
         }
     }
+    private fun activitybarSetup(){
+        val actionBar: Toolbar = findViewById(R.id.toolbarEvent)
+        setSupportActionBar(actionBar)
+
+        if (supportActionBar != null){
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
+        actionBar.setNavigationOnClickListener {
+            customDialogForBackButton()
+        }
+    }
+    private fun customDialogForBackButton() {
+        val customDialog = Dialog(this)
+        val dialogBinding = DialogCustomBackConfirmationBinding.inflate(layoutInflater)
+        customDialog.setContentView(dialogBinding.root)
+        customDialog.setCanceledOnTouchOutside(false)
+        dialogBinding.tvYes.setOnClickListener {
+            this@event_detail.finish()
+            customDialog.dismiss() // Dialog will be dismissed
+        }
+        dialogBinding.tvNo.setOnClickListener {
+            customDialog.dismiss()
+        }
+        //Start the dialog and display it on screen.
+        customDialog.show()
+    }
+
 }
