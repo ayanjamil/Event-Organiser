@@ -33,39 +33,40 @@ class event_detail : AppCompatActivity(),TextToSpeech.OnInitListener {
         val event = intent.getParcelableExtra("event",event_model::class.java)
         //reciving whateven extra was passed from main
         if (event!=null){
-            val imageView :ImageView=findViewById(R.id.event_imagview)
-            val eventName :TextView=findViewById(R.id.tv_eventname)
-            val descriptionContent:TextView=findViewById(R.id.tv_description_content)
-            val location:TextView=findViewById(R.id.tv_location)
-            val time:TextView=findViewById(R.id.tv_time)
-            val registerBtn = findViewById<Button>(R.id.btn_register)
-//            val actionBar: Toolbar = findViewById(R.id.toolbarEvent)
-            //above part is linking event_details kind of imporitng its ids
-            imageView.setImageResource(event.eventImage)
-            eventName.text=event.eventName
-            descriptionContent.text=event.eventDescription
-            val eventlocation = event.eventLocation
-            location.text="Location :$eventlocation"
-            val eventTime = event.eventTime
-            time.text="Time & Date:$eventTime"
-            setDate(eventTime)
-            //assigning values to the variables of event_detail activity by importing
-            // information of class and passing it here
-            //text to speach part
-            tts = TextToSpeech(this,this)
-                val event_name = event.eventName
-                speakOut(event_name) // it can only hold strings
-                Log.d("event_name issue","the event name is $event_name")
-
-            // calling the function for sound effects in the beginning
-            sounfPlay()
-            // setting up action bar with back button support
-            activitybarSetup()
+            eventdertailSetup(event) //sets up the details for display
+            setDate(event.eventTime)//sets up date for now and event
+            setupTts(event.eventName)//text to speach par
+            sounfPlay() // calling the function for sound effects in the beginning
+            activitybarSetup()// setting up action bar with back button support
         }
         else
             Log.d("event_details issue","when the if block is not executed in event_datials secton")
     }
+    // this function imports all the ids and sets up the event page for every event
+    private  fun eventdertailSetup(event:event_model){
+
+        val imageView :ImageView=findViewById(R.id.event_imagview)
+        val eventName :TextView=findViewById(R.id.tv_eventname)
+        val descriptionContent:TextView=findViewById(R.id.tv_description_content)
+        val location:TextView=findViewById(R.id.tv_location)
+        val time:TextView=findViewById(R.id.tv_time)
+        val registerBtn = findViewById<Button>(R.id.btn_register)
+        //above part is linking event_details kind of imporitng its ids
+        imageView.setImageResource(event.eventImage)
+        eventName.text=event.eventName
+        descriptionContent.text=event.eventDescription
+        val eventlocation = event.eventLocation
+        location.text="Location :$eventlocation"
+        time.text="Time & Date:${event.eventTime}"
+
+        //assigning values to the variables of event_detail activity by importing
+        // information of class and passing it here
+
+
+    }
+    //sets up date and time for now and events time for furthure calualation
     private fun setDate(eventTime:String){
+
         val displaytimer = findViewById<TextView>(R.id.tv_countdown)
         val myCalendar = Calendar.getInstance()
         val year = myCalendar.get(Calendar.YEAR)
@@ -84,6 +85,7 @@ class event_detail : AppCompatActivity(),TextToSpeech.OnInitListener {
         eventtime_calc = sdf.parse(event_time)
         countDown(eventtime_calc,currenttime_calc,displaytimer)
     }
+    // this part is responsible for countdown part
     private fun countDown(eventtime_calc: Date?, currenttime_calc: Date?,displaytimer:TextView) {
         // Countdown
         if (eventtime_calc != null && currenttime_calc != null) {
@@ -139,6 +141,16 @@ override fun onInit(status: Int) {
         }
         super.onDestroy()
     }
+    //sets up for talk to speach
+    private fun setupTts(eventName:String){
+        tts = TextToSpeech(this,this)
+        val event_name = eventName
+        speakOut(event_name) // it can only hold strings
+        Log.d("event_name issue","the event name is $event_name")
+
+
+    }
+    //setup for speaking out the parsed strings
     private fun speakOut(text: String) {
         Toast.makeText(this@event_detail, "Welcome to $text", Toast.LENGTH_SHORT)
             .show()
@@ -157,6 +169,7 @@ override fun onInit(status: Int) {
             e.printStackTrace()
         }
     }
+    //sets up for actionabr
     private fun activitybarSetup(){
         val actionBar: Toolbar = findViewById(R.id.toolbarEvent)
         setSupportActionBar(actionBar)
@@ -168,6 +181,7 @@ override fun onInit(status: Int) {
             customDialogForBackButton()
         }
     }
+    //setup for actionbars on click listner and use of custom dialog
     private fun customDialogForBackButton() {
         val customDialog = Dialog(this)
         val dialogBinding = DialogCustomBackConfirmationBinding.inflate(layoutInflater)
