@@ -22,12 +22,31 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         binding?.rvEventList?.layoutManager = LinearLayoutManager(this)
+        populateRecylerview()
+        // Adapter class is initialized above and list is passed in the param.
+        eventAdapter = EventAdapter(eventsList)
+        // adapter instance is set to the recyclerview to inflate the items.
+        binding?.rvEventList?.adapter = eventAdapter
+        // and here the adapter setting ends
+        eventAdapter.onItemClick={
+            val intent = Intent(this,event_detail::class.java)
+            intent.putExtra("event",it)
+            startActivity(intent)
+            Log.d("click","click in the main is getting registerd")
+        }
+        binding?.btnHistory?.setOnClickListener {
+            var intent = Intent(this,history_selected::class.java)
+            startActivity(intent)
+        }
+
+    }
+    private fun populateRecylerview(){
         eventsList= ArrayList()
         eventsList.add(event_model(
             com.example.edc_test01.R.drawable.image01,
             "makers and bakers",
             "Mesra" ,"00:13:12:02:24", getString(R.string.randomDescriptions)
-            ))
+        ))
 
         eventsList.add(event_model(
             com.example.edc_test01.R.drawable.image02,
@@ -50,22 +69,9 @@ class MainActivity : AppCompatActivity() {
             "Mesra" ,"00:13:12:02:24", getString(R.string.randomDescriptions)
         ))
 
-       //repeating
+        //repeating
         //can also make a constance for making this block cleaner
 
-
-
-        // Adapter class is initialized above and list is passed in the param.
-        eventAdapter = EventAdapter(eventsList)
-        // adapter instance is set to the recyclerview to inflate the items.
-        binding?.rvEventList?.adapter = eventAdapter
-        // and here the adapter setting ends
-        eventAdapter.onItemClick={
-            val intent = Intent(this,event_detail::class.java)
-            intent.putExtra("event",it)
-            startActivity(intent)
-            Log.d("click","click in the main is getting registerd")
-        }
     }
     override fun onDestroy() {
         super.onDestroy()

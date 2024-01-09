@@ -1,5 +1,6 @@
 package com.example.edc_test01
 import android.app.Dialog
+import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Build
@@ -14,7 +15,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.lifecycleScope
 import com.example.edc_test01.databinding.DialogCustomBackConfirmationBinding
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -41,6 +44,19 @@ class event_detail : AppCompatActivity(),TextToSpeech.OnInitListener {
         }
         else
             Log.d("event_details issue","when the if block is not executed in event_datials secton")
+        var regBtn = findViewById<Button>(R.id.btn_register)
+        regBtn.setOnClickListener {
+            var intent = Intent(this,registerPage::class.java)
+            startActivity(intent)
+            var id= event?.eventName
+            Log.d("add_dp","event naem added to db :$id")
+
+            val dao = (application as DemoApp).db.eventDao() //definig the dao object
+            addDateToDatabase(dao, id.toString())//adding the id to db via function
+
+
+            Log.d("registerBtn","Register button is clicked")
+        }
     }
     // this function imports all the ids and sets up the event page for every event
     private  fun eventdertailSetup(event:event_model){
@@ -196,6 +212,12 @@ override fun onInit(status: Int) {
         }
         //Start the dialog and display it on screen.
         customDialog.show()
+    }
+    private fun addDateToDatabase(eventDao: eventDao,id:String) {
+
+        lifecycleScope.launch {
+            eventDao.insert(eventEntity(id)) // uisng .insert defined in idDao interface
+        }
     }
 
 }

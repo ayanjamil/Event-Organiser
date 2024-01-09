@@ -7,6 +7,7 @@
 
         <!-- Other views can be added here -->
         <ImageButton
+            android:id="@+id/btn_history"
             android:src="@drawable/notification"
             app:layout_constraintRight_toRightOf="parent"
 

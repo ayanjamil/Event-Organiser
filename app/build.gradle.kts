@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -39,6 +40,20 @@ android {
 }
 
 dependencies {
+
+    val room_version = "2.6.1"
+    val activityVersion = "1.3.1"
+    val lifecycle_version = "2.4.0-beta01"
+    // Room and Lifecycle dependencies
+    implementation ("androidx.room:room-runtime:$room_version")
+    kapt ("androidx.room:room-compiler:$room_version")
+    //kotlin extensions for coroutine support with room
+    implementation("androidx.room:room-ktx:$room_version")
+
+    //kotlin extension for coroutine support with activities
+    implementation ("androidx.activity:activity-ktx:$activityVersion")
+
+
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
